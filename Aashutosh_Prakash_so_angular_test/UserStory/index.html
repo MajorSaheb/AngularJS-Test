@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Enuke Test AngularJS</title>
+        <script>document.write('<base href="' + document.location + '" />');</script>
+        <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.25/angular.js" data-semver="1.2.25"></script>
+        <script src="controller.js"></script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="MainCtrl" class="container">
+          <h1>Select text file</h1>
+            <input type="file" on-read-file="showContent($fileContent)" />
+            <button ng-if = content ng-click="fnConvert()">Convert to number!!</button>
+            <div style="clear:both"></div>
+            <div style='float:left;width:30%' ng-if="content">
+                <h2>File content is:</h2>
+                <pre>{{ content }}</pre>
+            </div>
+            <div ng-if="finalData">
+                <h2>Output:</h2>
+                <a ng-if = 'downloadBtn' download="output_user_story_1.txt" href='{{textFile}}'>Download</a>
+                <pre>{{ finalData }}</pre>
+            </div>
+        </div>
+    </body>
+</html>
